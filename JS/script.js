@@ -8,19 +8,16 @@ var total = 0;
 // functions
 function saveBill() {
   billValue = parseFloat(document.getElementsByClassName("billValue")[0].value);
-  console.log("billvalue: ", billValue);
 }
 
 function saveTip(tip) {
   tipValue = parseFloat(tip.getAttribute("data-value"));
-  console.log("tipvalue: ", tipValue);
 }
 
 function saveCustomTip() {
   tipValue = parseFloat(
     document.getElementsByClassName("nbCustom")[0].value / 100
   );
-  console.log("tipvalue: ", tipValue);
 }
 
 function savePeopleNum() {
@@ -39,7 +36,6 @@ function savePeopleNum() {
     nbOfPeopleElement.classList.add("peopleBg");
     document.getElementsByClassName("errorMessage")[0].style.display = "none";
   }
-  console.log("people: ", nbOfPeople);
 }
 
 function calculate() {
