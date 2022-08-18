@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="CSS/style.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="initial">
+      <div class="logo">
+        <img src="images/logo.svg" alt="" />
+      </div>
+
+      <div class="main">
+        <div class="inputs">
+          <div class="input-1">
+            <h4 class="heading_4">Bill</h4>
+
+            <div class="bill">
+              <div class="dollar-icon">
+                <img src="images/icon-dollar.svg" alt="" />
+              </div>
+              <input
+                type="text"
+                placeholder="Enter"
+                dir="rtl"
+                class="billValue"
+                onkeyup="saveBill(), calculate()"
+              />
+            </div>
+          </div>
+
+          <!-- tip styles part 2 -->
+
+          <div class="input-2">
+            <h4 class="heading_4">Select Tip %</h4>
+
+            <div class="bigContainer">
+              <div class="nbContainer">
+                <button
+                  class="nbPercent bgColor"
+                  data-value="0.05"
+                  data-counter="0"
+                  onclick="saveTip(this), calculate(), clickButton(this)"
+                >
+                  5%
+                </button>
+              </div>
+
+              <div class="nbContainer">
+                <button
+                  class="nbPercent bgColor"
+                  data-value="0.1"
+                  data-counter="1"
+                  onclick="saveTip(this), calculate(), clickButton(this)"
+                >
+                  10%
+                </button>
+              </div>
+
+              <div class="nbContainer">
+                <button
+                  class="nbPercent bgColor"
+                  data-value="0.15"
+                  data-counter="2"
+                  onclick="saveTip(this), calculate(), clickButton(this)"
+                >
+                  15%
+                </button>
+              </div>
+
+              <div class="nbContainer">
+                <button
+                  class="nbPercent bgColor"
+                  data-value="0.25"
+                  data-counter="3"
+                  onclick="saveTip(this), calculate(), clickButton(this)"
+                >
+                  25%
+                </button>
+              </div>
+
+              <div class="nbContainer">
+                <button
+                  class="nbPercent bgColor"
+                  data-value="0.5"
+                  data-counter="4"
+                  onclick="saveTip(this), calculate(), clickButton(this)"
+                >
+                  50%
+                </button>
+              </div>
+
+              <div class="nbContainer">
+                <input
+                  class="nbCustom"
+                  type="text"
+                  placeholder="Custom"
+                  dir="rtl"
+                  maxlength="2"
+                  onkeyup="saveCustomTip(), calculate()"
+                  onclick="removeClickedId(this)"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="input-3">
+            <div class="peopleText">
+              <h4 class="heading_4">Number of People</h4>
+              <h4 class="errorMessage">Can't be zero</h4>
+            </div>
+
+            <div class="people peopleBg">
+              <div class="person-icon">
+                <img src="images/icon-person.svg" alt="" />
+              </div>
+              <input
+                type="text"
+                placeholder="Enter"
+                dir="rtl"
+                class="nbOfPeople"
+                onkeyup="savePeopleNum(), calculate()"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result_text">
+            <div class="resultContent">
+              <div class="txt">
+                <h4>Tip Amount</h4>
+                <h5 class="person">/ person</h5>
+              </div>
+
+              <h1 id="tipAmount">$0.00</h1>
+            </div>
+
+            <div class="resultContent">
+              <div class="txt">
+                <h4>Total</h4>
+                <h5 class="person">/ person</h5>
+              </div>
+
+              <h1 id="total">$0.00</h1>
+            </div>
+          </div>
+
+          <button class="reset" onclick="Reset()">
+            <span class="ResetButton">RESET</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="JS/script.js"></script>
+  </body>
+</html>
